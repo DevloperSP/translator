@@ -1,0 +1,57 @@
+{
+  "name": "Telegram Voice Translator & Same-Voice Bot",
+  "description": "Telegram bot that translates forwarded voice messages and clones your voice into English, Hindi, Arabic, German, and 13+ other languages via OpenAI + Replicate XTTS-v2.",
+  "repository": "https://github.com/DevloperSP/translator",
+  "keywords": [
+    "telegram",
+    "bot",
+    "voice-translator",
+    "voice-cloning",
+    "xtts-v2",
+    "openai",
+    "replicate",
+    "heroku"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku-community/apt"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Telegram Bot token from @BotFather",
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for Whisper Speech-to-Text and GPT translation",
+      "required": true
+    },
+    "REPLICATE_API_TOKEN": {
+      "description": "Replicate API token for pay-per-use XTTS-v2 same-voice cloning",
+      "required": true
+    },
+    "OPENAI_STT_MODEL": {
+      "description": "OpenAI transcription model",
+      "value": "whisper-1",
+      "required": false
+    },
+    "OPENAI_TRANSLATE_MODEL": {
+      "description": "OpenAI translation model",
+      "value": "gpt-4o-mini",
+      "required": false
+    },
+    "WEBHOOK_URL": {
+      "description": "Optional https://your-app.herokuapp.com URL if running a web dyno instead of worker",
+      "required": false
+    }
+  }
+}

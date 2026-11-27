@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Temporary audio / runtime files
+tmp/
+*.ogg
+*.wav
+*.mp3
+*.m4a
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
